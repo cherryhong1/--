@@ -1,0 +1,54 @@
+@charset"utf-8";
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd{
+	padding: 0;
+	margin: 0;
+}
+li{
+	list-style:none;
+}
+a{
+	text-decoration: none;
+	color: #666;
+}
+
+
+img{
+	vertical-align: top;
+	border:0;
+}
+.w1200{
+	width: 1200px;
+	margin: auto;
+}
+.cl:after{
+	content: "";
+	display: block;
+	clear:both;
+	height:0;
+	overflow: hidden;
+	visibility:hidden;
+}
+.cl{
+	/*解决IE6/7兼容问题*/
+	zoom:1;
+}
+html{
+    width: 100%;
+	font-family:"微软雅黑";
+	font-style: 12px;
+}
+/* 	 */
+.flexBox{
+	display:-webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+	display: flex;
+	flex-direction:row;
+	-webkit-flex-direction:row;
+	-webkit-justify-content:space-between;
+	justify-content:space-between;
+	-moz-box-pack:space-between;	
+	box-pack:space-between;
+	
+}
