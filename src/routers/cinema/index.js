@@ -1,5 +1,21 @@
 export default{
     path:'/cinema',
     name:'Cinema',
-    component:()=>import('@/views/cinema')
+    component:()=>import('@/views/cinema'),
+    children:[{
+        path:'clist',
+        name:'Clist',
+        component:()=>import('@/components/Clist')
+    },{
+        path:'band',
+        name:'Band',
+        component:()=>import('@/components/Band')
+    },{
+        path:'trait',
+        name:'Trait',
+        component:()=>import('@/components/Trait')
+    },{
+        path:'/cinema',
+        redirect:'/cinema/band'
+    }]
 }

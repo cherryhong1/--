@@ -21,6 +21,12 @@ export default new Router({
     //   component: () => import(/* webpackChunkName: "about" */ './views/About.vue')  
     //   // 按需加载  // 
     // }
-    movieRouter,cinemaRouter,mineRouter
+    movieRouter,
+    cinemaRouter,
+    mineRouter,
+    {
+      path:'/*',
+      redirect:'/movie'
+    }
   ]
 })

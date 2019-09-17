@@ -17,13 +17,14 @@ export default {
 <style lang="scss" scoped>
     h1{
         text-align: center;
-        font-size: 36px;
+        font-size: 24px;
         position: fixed;
         left: 0;
         top: 0;
         width: 100%;
         height: 50px;
+        line-height: 50px;
         background: hotpink;
-
+        color: beige;
     }
 </style>
