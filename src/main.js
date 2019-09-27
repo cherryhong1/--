@@ -5,7 +5,7 @@ import store from './stores'
 
 
 import axios from 'axios'
-import qs from 'qs'
+
 Vue.prototype.axios = axios;
 
 Vue.filter('setWH',(url,arg)=>{
@@ -13,6 +13,11 @@ Vue.filter('setWH',(url,arg)=>{
 })
 
 
+import Scroller from './components/Scroller'
+Vue.component('Scroller',Scroller)
+
+import Loading from './components/Loading'
+Vue.component('Loading',Loading)
 
 Vue.config.productionTip = false
 
