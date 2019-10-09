@@ -6,14 +6,14 @@
           <div class="city_hot">
             <h2>热门城市</h2>
             <ul class="cl">
-              <li class="hotCity" v-for="item in hotList" :key="item.id">{{item.nm}}</li>
+              <li class="hotCity" v-for="item in hotList" :key="item.id" @tap='handleToCity(item.nm,item.id)'>{{item.nm}}</li>
             </ul>
           </div>
           <div class="city_sort" ref="city_sort">
             <div v-for="item in cityList" :key="item.index">
               <h3>{{item.index}}</h3>
               <ul>
-                <li class="city_name" v-for="city in item.list" :key="city.id">{{city.nm}}</li>
+                <li class="city_name" v-for="city in item.list" :key="city.id" @tap='handleToCity(city.nm,city.id)'>{{city.nm}}</li>
               </ul>
             </div>
           </div>
@@ -112,6 +112,10 @@ export default {
       console.log(h3[index].offsetTop);
       // this.$refs.city_sort.parentNode.scrollTop = h3[index].offsetTop;
         this.$refs.citylis.scrollTo(h3[index].offsetTop);
+    },
+    handleToCity(nm,id){
+      console.log(nm,id)
+      this.$store.commit('city/CTIY_INF0',{nm,id})
     }
   }
 };

@@ -4,15 +4,15 @@ const state ={
 };
 const actions={
 
-}
+};
 const mutations ={
     CTIY_INF0(state,payload){
         state.nm =payload.nm;
         state.id =payload.id;
     }
-}
+};
 export default{
-    namespace:true,
+    namespaced:true,
     state,
     actions,
     mutations
