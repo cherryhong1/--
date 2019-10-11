@@ -15,6 +15,8 @@ export default {
 <style lang="scss" scoped>
 #footer,ul{
    width: 100%;
+   background: rgb(133, 80, 80);
+   color: #fff;
 }
 #footer{
     position: fixed;
@@ -36,7 +38,7 @@ li{
    text-align: center;
    height: 50px;
    font-size: 16px;
-    color:rgb(134, 131, 136);
+    color:#fff;
 }
 li  p{
     line-height: 50px;

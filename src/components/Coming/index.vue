@@ -25,15 +25,23 @@ export default {
   data() {
     return {
       comingMovie: [],
-      isLoading: true
+      isLoading: true,
+      preCity:-1,
     };
   },
-  mounted() {
-    this.axios.get("/api/movieComingList?cityId=1").then(res => {
+  activated() {
+    var cityId = this.$store.state.city.id;
+    if (this.preCity === cityId) {
+      return false
+    }
+    this.isLoading = true;
+    console.log(cityId)
+    this.axios.get("/api/movieComingList?cityId="+cityId).then(res => {
       if (res.data.msg === "ok") {
         var comingMovie = res.data.data.comingList;
         this.comingMovie = comingMovie;
         this.isLoading = false;
+        this.preCity = cityId
       }
     });
   }

@@ -55,9 +55,10 @@ export default {
       //   clearTimeout ()
       //   setTimeout()
       var that = this;
+      var cityId = this.$store.state.city.id;
       this.cancelRequest();
       this.axios
-        .get("/api/searchList?cityId=1&kw=" + newVal, {
+        .get("/api/searchList?cityId="+cityId+"&kw=" + newVal, {
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
             Accept: "application/json"

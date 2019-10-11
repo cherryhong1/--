@@ -116,6 +116,9 @@ export default {
     handleToCity(nm,id){
       console.log(nm,id)
       this.$store.commit('city/CTIY_INF0',{nm,id})
+      window.localStorage.setItem('nowNm',nm);
+      window.localStorage.setItem('nowId',id)
+      this.$router.push('movie/playing')
     }
   }
 };

@@ -27,14 +27,20 @@ export default {
     data() {
         return {
             cinemasList:[],
-
+            preCity:-1
         }
     },
-    mounted() {
-        this.axios.get('/api/cinemaList?cityId=10').then((res)=>{
+    activated() {
+        var cityId = this.$store.state.city.id;
+        if (this.preCity ===cityId) {
+            return
+        }
+
+        this.axios.get('/api/cinemaList?cityId='+cityId).then((res)=>{
             if(res.data.msg === 'ok'){
                 var cinemasList = res.data.data.cinemas;
                 this.cinemasList = cinemasList;
+                this.preCity =cityId
             }
         })
     },
