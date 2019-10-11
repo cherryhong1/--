@@ -26,6 +26,7 @@
   </div>
 </template>
 <script>
+
 export default {
   name: "Playing",
   data() {
@@ -48,7 +49,11 @@ export default {
         var movieList = res.data.data.movieList;
         this.movieList = movieList;
          this.isLoading = false;
-         this.preCity = cityId
+         this.preCity = cityId;
+         //this.$message.info('获取数据成功') 
+        // this.$message.error('错误消息') 
+        // this.$message.warning('警告消息') 
+        // this.$message.success('成功消息')
       }
     });
   },

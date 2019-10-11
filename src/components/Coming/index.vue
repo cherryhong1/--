@@ -41,7 +41,8 @@ export default {
         var comingMovie = res.data.data.comingList;
         this.comingMovie = comingMovie;
         this.isLoading = false;
-        this.preCity = cityId
+        this.preCity = cityId;
+        this.$message.success('成功消息')
       }
     });
   }

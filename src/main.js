@@ -12,6 +12,8 @@ Vue.filter('setWH',(url,arg)=>{
   return url.replace(/w\.\h/,arg)
 })
 
+import {Toast2} from '@/components/JS'
+Vue.use(Toast2)
 
 import Scroller from './components/Scroller'
 Vue.component('Scroller',Scroller)
