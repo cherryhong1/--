@@ -1,7 +1,7 @@
 <template lang="">
     <div class='detailContent'>
         <Header title="影片详情">
-           <i><</i>
+           <i @tap='handleToBack'><------</i>
         </Header>
         <div class='movieDetail'> 影片详情457890</div>
        
@@ -14,7 +14,13 @@ export default {
   name: "Detail",
   components:{
       Header
-  }
+  },
+  methods: {
+      handleToBack(){
+          console.log('a')
+          this.$router.back();
+      }
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -29,5 +35,10 @@ export default {
 .movieDetail{
     margin-top: 100px;
     text-align: center;
+}
+i{
+    background: #000;
+    line-height: 100px;
+    color: #fff
 }
 </style>

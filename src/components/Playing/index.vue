@@ -5,11 +5,11 @@
         <ul>
           <li>{{pullname}}</li>
           <li v-for="item in movieList" :key="item.id">
-            <div class="show_pic" @tap="handleToDetail">
+            <div class="show_pic" @tap="handleToDetail(item.id)" >
               <img :src="item.img|setWH('78.130')" alt />
             </div>
             <div class="info_list">
-              <h2>{{item.nm}} {{item.version}}</h2>
+              <h2><span @tap="handleToDetail(item.id)">{{item.nm}} </span>{{item.version}}</h2>
 
               <p>
                 观众评分
