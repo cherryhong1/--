@@ -6,6 +6,8 @@ import mineRouter from './mine'
 Vue.use(Router)
 
 export default new Router({
+  mode:'history',
+  base:'process.env.BASE_URL',
   routes: [
     // {
     //   path: '/',
@@ -21,6 +23,8 @@ export default new Router({
     //   component: () => import(/* webpackChunkName: "about" */ './views/About.vue')  
     //   // 按需加载  // 
     // }
+    
+
     movieRouter,
     cinemaRouter,
     mineRouter,
