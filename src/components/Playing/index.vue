@@ -38,9 +38,8 @@ export default {
     };
   },
   activated() {
-    
     var cityId =this.$store.state.city.id;
-    if(this.preCity === cityId){
+    if (this.preCity === cityId) {
       return 
     }
     this.isLoading = true;
@@ -58,19 +57,19 @@ export default {
     });
   },
   methods: {
-    handleToDetail() {
-      console.log("handleToDetail");
+    handleToDetail(id) {
+      console.log(id);
+      this.$router.push('/movie/detail/1/'+id)
     },
     handlerToScroll(pos) {
       this.pullname = "正在更新中";
     },
     handlerToTouchedEnd(pos) {
+      console.log(pos)
       this.pullname = "数据更新完成";
       this.axios.get("/api/movieOnInfoList?cityId=11").then(res => {
         if (res.data.msg === "ok") {
           var movieList = res.data.data.movieList;
-          console.log(movieList);
-
           setTimeout(() => {
             this.movieList = movieList;
             this.pullname = "";
@@ -86,6 +85,7 @@ export default {
   font-size: 14px;
   margin-left: 10px;
   margin-right: 10px;
+  margin-bottom:60px;
 }
 .movie_body li {
   display: flex;

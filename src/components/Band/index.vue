@@ -7,7 +7,6 @@
 export default {
     name:'Band',
 
-
 }
 </script>
 <style lang="scss" scoped>

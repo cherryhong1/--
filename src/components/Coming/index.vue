@@ -4,11 +4,11 @@
     <Scroller v-else>
       <ul>
         <li v-for="item in comingMovie" :key="item.id">
-          <div class="show_pic">
-            <img :src="item.img|setWH('78.130')" alt />
+          <div class="show_pic" @tap="handlerToDetail(item.id)">
+            <img  :src="item.img|setWH('78.130')" alt />
           </div>
           <div class="info_list">
-            <h2>{{item.nm}} {{item.version}}</h2>
+            <h2><span @tap="handlerToDetail(item.id)">{{item.nm}}</span> {{item.version}}</h2>
             <p v-if="item.star">主演：{{item.star}}</p>
             <p v-if="item.showInfo">{{item.showInfo}}</p>
             <p v-if="item.wish">{{item.wish}}人想看</p>
@@ -35,17 +35,22 @@ export default {
       return false
     }
     this.isLoading = true;
-    console.log(cityId)
     this.axios.get("/api/movieComingList?cityId="+cityId).then(res => {
       if (res.data.msg === "ok") {
         var comingMovie = res.data.data.comingList;
         this.comingMovie = comingMovie;
         this.isLoading = false;
         this.preCity = cityId;
-        this.$message.success('成功消息')
+        // this.$message.success('成功消息')
       }
     });
-  }
+  },
+  methods: {
+    handlerToDetail(id) {
+      console.log(id);
+      this.$router.push('/movie/detail/2/'+id)
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

@@ -15,6 +15,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+
     h1{
         text-align: center;
         font-size: 24px;
@@ -27,4 +28,5 @@ export default {
         background: hotpink;
         color: beige;
     }
+
 </style>

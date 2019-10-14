@@ -19,11 +19,25 @@ export default {
         name:'Search',
         component: ()=> import('@/components/Search')
     },{
-        path:'detail',
+        path:'detail/1/:id',
         components:{
+             default:()=>import('@/components/Playing'),
             detail:()=>import('@/views/movie/detail.vue')
+        },
+        props:{
+            detail:true
         }
     },{
+        path:'detail/2/:id',
+        components:{
+            default:()=>import('@/components/Coming'),
+            detail:()=>import('@/views/movie/detail.vue')
+        },
+        props:{
+            detail:true
+        }
+    },
+    {
         path:'/movie',
         redirect:'/movie/playing'
     }]
