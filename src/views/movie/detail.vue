@@ -6,6 +6,7 @@
     <Loading v-if="isLoading"></Loading>
     <div v-else class="moiveContent">
       <div class="movieMain">
+        <div class="bgBlur" :style="{backgroundImage:'url('+detailMovie.albumImg+')'}"></div>
         <div class="fengmian">
           <img :src="detailMovie.albumImg || detailMovie.img" alt />
         </div>
@@ -63,17 +64,16 @@ export default {
           var mySwiper = new Swiper(".swiper-container", {
             autoplay: true, //可选选项，自动滑动
             loop: true,
-             effect : 'coverflow',
+            effect: "coverflow",
             slidesPerView: 3,
             centeredSlides: true,
             coverflowEffect: {
-                rotate: 30,
-                stretch: 10,
-                depth: 60,
-                modifier: 2,
-                slideShadows : true
-            },
-            
+              rotate: 30,
+              stretch: 10,
+              depth: 60,
+              modifier: 2,
+              slideShadows: true
+            }
           });
         });
       }
@@ -89,8 +89,7 @@ export default {
   width: 100%;
   min-height: 100%;
   background: #fff;
-  z-index: 100
-
+  z-index: 100;
 }
 .slide-enter-active {
   animation: 0.2s slideMove;
@@ -119,14 +118,30 @@ header {
   position: relative;
 }
 .movieMain {
-  padding-top: 70px;
+  margin-top: 50px;
+  padding-top: 10px;
   display: flex;
   justify-content: space-around;
   font-size: 14px;
   background: #474953;
   color: #fff;
+  position: relative;
   padding-bottom: 20px;
 }
+.bgBlur {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+//   background: 0 40%;
+ filter: blur(65px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+}
+
 .fengmian {
   width: 100px;
 }
@@ -141,11 +156,11 @@ header {
   color: #474953;
   font-weight: bold;
 }
-.swiper-slide{
-    display: inline-block;
-    width: 100px!important;
+.swiper-slide {
+  display: inline-block;
+  width: 100px !important;
 }
-.swiper-slide img{
-    width: 90%;
+.swiper-slide img {
+  width: 90%;
 }
 </style>
