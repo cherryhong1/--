@@ -1,4 +1,5 @@
 module.exports = {
+    publicPath:'/mioamiao',
     devServer: {
         proxy:{
             '/api':{
